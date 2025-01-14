@@ -15,6 +15,7 @@ Run container with the image
 ```bash
 docker run --name data-engineering-postgres -e POSTGRES_PASSWORD=secret -d postgres
 ```
+Now the container is indeed running
 
 We want to create new DB inside container
 exec: Runs the following command inside a running container 
@@ -24,6 +25,7 @@ createdb: is specific to postgres not docker and creates new DB
 ```bash
 docker exec -u postgres data-engineering-postgres createdb postgres-db
 ```
+The 'postgres-db' has been created
 
 **Important:**
 Connect to postgres shell
@@ -32,9 +34,10 @@ Connect to postgres shell
 psql: postgres command line client
 
 -u is same as -U?
--d: specifies the database
+-d: specifies the database? 
 
 ```bash
 docker exec -it data-engineering-postgres psql -U postgres -d postgres-db
 ```
+
 
